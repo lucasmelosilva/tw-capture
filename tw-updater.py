@@ -21,7 +21,15 @@ def cria_streamer():
 
 
 def lerjson():
-    pass
+    array = []
+    arquivo = open('streamers.json', 'r')
+    nomes = json.load(arquivo)
+
+    for nome in nomes['streamers']:
+        array.append(nome)
+
+    return array 
+
 
 if __name__ == '__main__':
-    cria_streamer()
+    pass
