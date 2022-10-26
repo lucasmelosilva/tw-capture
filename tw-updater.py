@@ -8,7 +8,12 @@ import os
 def cria_streamer():
     base = '#EXTM3U8\n\n'
 
-    os.system('rm streamer.m3u8')
+    arquivo_existe = os.path.exists('./streamer.m3u8')
+
+    if arquivo_existe:
+        os.system('rm streamer.m3u8')
+        print('Atualizando stream')
+
 
     arquivo = open('streamer.m3u8', 'w+')
     arquivo.write('base')
@@ -16,6 +21,7 @@ def cria_streamer():
 
 
 def lerjson():
+    pass
 
 if __name__ == '__main__':
-    lerjson()
+    cria_streamer()
